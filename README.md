@@ -1,7 +1,7 @@
 # CSPC Assignment Solutions
 
 ## Basic Maths
-### Ques1 : Count Digits
+### Ques 1 : Count Digits
 
 ``` java
 class Solution {
@@ -19,7 +19,7 @@ class Solution {
 }
 ```
 
-### Ques2 : Reverse Digits
+### Ques 2 : Reverse Digits
 
 ``` java
 class Solution {
@@ -38,7 +38,7 @@ class Solution {
 }
 ```
 
-### Ques3 : Palindrome Numbers
+### Ques 3 : Palindrome Numbers
 
 ``` java
 class Solution{
@@ -60,7 +60,7 @@ class Solution{
 }
 ```
 
-### Ques4 : Armstrong Numbers
+### Ques 4 : Armstrong Numbers
 ``` java
 class Solution {
     static boolean armstrongNumber(int num) {
@@ -78,7 +78,7 @@ class Solution {
 }
 ```
 
-### Ques5 : All divisors of a Number
+### Ques 5 : All divisors of a Number
 
 ``` java
 class Solution {
@@ -102,7 +102,7 @@ class Solution {
 }
 ```
 
-### Ques6 : Prime Number
+### Ques 6 : Prime Number
 
 ``` java
 class Solution {
@@ -116,7 +116,7 @@ class Solution {
 }
 ```
 
-### Ques7 : GCD of two numbers
+### Ques 7 : GCD of two numbers
 
 ``` java
 class Solution {
@@ -129,4 +129,124 @@ class Solution {
         return a;
     }
 }
+```
+
+## STL Practice Problems
+
+### Ques 1 : Vector Sort
+
+``` cpp
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    
+    vector<int> v;
+    for(int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        v.push_back(x);
+    }
+    sort(v.begin(), v.end());
+    
+    for(int i =0; i <n; i++) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
+```
+
+### Ques 2 : Vector Erase
+
+``` cpp
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for(int i =0; i <n; i++) {
+        cin >> v[i];
+    }
+    int p;
+    cin >> p;
+    v.erase(v.begin() + p - 1);
+    
+    int a, b;
+    cin >> a >> b;
+    
+    v.erase(v.begin() + a - 1, v.begin() + b - 1);
+    cout << v.size() << endl;
+    for(int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
+```
+
+### Ques 3 : Lower Bound STL
+
+``` cpp
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for(int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+    int q;
+    cin >> q;
+    for(int i = 0; i < q; i++) {
+        int query;
+        cin >> query;
+        auto it = lower_bound(v.begin(), v.end(), query);
+        int idx = it - v.begin();
+        if(it != v.end() && *it == query) {
+            cout << "Yes " << idx + 1 << endl ;
+        }
+        else {
+            cout << "No " << idx + 1 << endl;
+        }
+    }
+    return 0;
+}
+```
+
+### Ques 4 : Sets STL
+
+``` cpp
+
+```
+
+### Ques 5 : Maps STL
+
+``` cpp
+
+```
+
+### Ques 6 : Dequeue STL
+
+``` cpp
+
 ```
