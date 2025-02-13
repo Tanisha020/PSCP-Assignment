@@ -356,3 +356,57 @@ int main(){
   	return 0;
 }
 ```
+
+## Basic Ad hoc Problems
+
+### Ques 1 : Tsort
+
+``` java
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+    public static void main (String[] args) throws java.lang.Exception
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        Arrays.sort(arr);
+        for(int i = 0; i < n;i++) {
+            System.out.println(arr[i]);
+        }
+        sc.close();
+    }
+}
+```
+
+### Ques 2 : Fruits
+
+``` java
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef {
+    public static void main(String[] args) throws java.lang.Exception {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt(); 
+        while(t > 0) {
+            int n = sc.nextInt(); 
+            int m = sc.nextInt(); 
+            int k = sc.nextInt(); 
+            int diff = Math.abs(n - m);
+            int minDiff = Math.max(0, diff - k);
+            System.out.println(minDiff);
+            t--;
+        }
+        sc.close();
+    }
+}
+```
